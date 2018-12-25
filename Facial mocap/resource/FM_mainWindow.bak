@@ -1,0 +1,989 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>qtFMWidget</class>
+ <widget class="QWidget" name="qtFMWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>318</width>
+    <height>640</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Facial Mocap</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <property name="leftMargin">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>Device Source :</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="qtSystemComboBox">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <horstretch>1</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <item>
+        <property name="text">
+         <string>Faceware</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="qtMappingToolButton">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>80</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Mapping</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="qtServerSettingsGroupBox">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>150</height>
+      </size>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="title">
+      <string>Server Settings</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+     <property name="flat">
+      <bool>false</bool>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <property name="spacing">
+       <number>5</number>
+      </property>
+      <property name="margin">
+       <number>15</number>
+      </property>
+      <item>
+       <widget class="QToolButton" name="qtConnectToolButton">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Connect</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="qtFaceSettingsGroupBox">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="title">
+      <string>Face Settings</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_5">
+      <item>
+       <widget class="QLabel" name="label_6">
+        <property name="text">
+         <string>Select Feature to mask out.</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRLContainer" name="qtFullDummyFrame" native="true">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>255</width>
+          <height>255</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>255</width>
+          <height>255</height>
+         </size>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <widget class="QTransToolBtn" name="qtRightBrowTransToolBtn">
+         <property name="geometry">
+          <rect>
+           <x>80</x>
+           <y>100</y>
+           <width>16</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="toolTip">
+          <string>RightBrow</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>:/plugin/ICMotionCapture/icon/UnSelected.png</normaloff>
+           <normalon>:/plugin/ICMotionCapture/icon/Selected.png</normalon>
+           <activeoff>:/plugin/ICMotionCapture/icon/UnSelected.png</activeoff>
+           <activeon>:/plugin/ICMotionCapture/icon/Selected.png</activeon>
+           <selectedoff>:/plugin/ICMotionCapture/icon/Selected.png</selectedoff>
+           <selectedon>:/plugin/ICMotionCapture/icon/Selected.png</selectedon>:/plugin/ICMotionCapture/icon/UnSelected.png</iconset>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QToolButton" name="qtSelectAllToolButton">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>10</y>
+           <width>31</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="toolTip">
+          <string>Select All</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>Select</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>:/plugin/ICMotionCapture/icon/SelectAll.png</normaloff>:/plugin/ICMotionCapture/icon/SelectAll.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>31</width>
+           <height>31</height>
+          </size>
+         </property>
+        </widget>
+        <widget class="QToolButton" name="qtClearToolButton">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="geometry">
+          <rect>
+           <x>215</x>
+           <y>10</y>
+           <width>31</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="toolTip">
+          <string>Clear</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>Clear</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>:/plugin/ICMotionCapture/icon/Clear.svg</normaloff>:/plugin/ICMotionCapture/icon/Clear.svg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>31</width>
+           <height>31</height>
+          </size>
+         </property>
+        </widget>
+        <widget class="QToolButton" name="qtProfileEditorToolButton">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="geometry">
+          <rect>
+           <x>215</x>
+           <y>215</y>
+           <width>31</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="toolTip">
+          <string>Profile Editor</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>Profile</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>:/plugin/ICMotionCapture/icon/Detail.svg</normaloff>
+           <normalon>:/plugin/ICMotionCapture/icon/Detail_sel.svg</normalon>
+           <disabledoff>:/plugin/ICMotionCapture/icon/Detail_dis.svg</disabledoff>
+           <disabledon>:/plugin/ICMotionCapture/icon/Detail_dis.svg</disabledon>
+           <activeoff>:/plugin/ICMotionCapture/icon/Detail.svg</activeoff>
+           <activeon>:/plugin/ICMotionCapture/icon/Detail_sel.svg</activeon>
+           <selectedoff>:/plugin/ICMotionCapture/icon/Detail_sel.svg</selectedoff>
+           <selectedon>:/plugin/ICMotionCapture/icon/Detail_sel.svg</selectedon>:/plugin/ICMotionCapture/icon/Detail.svg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>31</width>
+           <height>31</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QTransToolBtn" name="qtRightEyeBallTransToolBtn">
+         <property name="geometry">
+          <rect>
+           <x>80</x>
+           <y>120</y>
+           <width>16</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="toolTip">
+          <string>RightEyeBall</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>:/plugin/ICMotionCapture/icon/UnSelected.png</normaloff>
+           <normalon>:/plugin/ICMotionCapture/icon/Selected.png</normalon>
+           <activeoff>:/plugin/ICMotionCapture/icon/UnSelected.png</activeoff>
+           <activeon>:/plugin/ICMotionCapture/icon/Selected.png</activeon>
+           <selectedoff>:/plugin/ICMotionCapture/icon/Selected.png</selectedoff>
+           <selectedon>:/plugin/ICMotionCapture/icon/Selected.png</selectedon>:/plugin/ICMotionCapture/icon/UnSelected.png</iconset>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QTransToolBtn" name="qtRightMouthCloseTransToolBtn">
+         <property name="geometry">
+          <rect>
+           <x>70</x>
+           <y>170</y>
+           <width>16</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="toolTip">
+          <string>RightMouthClose</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>:/plugin/ICMotionCapture/icon/UnSelected.png</normaloff>
+           <normalon>:/plugin/ICMotionCapture/icon/Selected.png</normalon>
+           <activeoff>:/plugin/ICMotionCapture/icon/UnSelected.png</activeoff>
+           <activeon>:/plugin/ICMotionCapture/icon/Selected.png</activeon>
+           <selectedoff>:/plugin/ICMotionCapture/icon/Selected.png</selectedoff>
+           <selectedon>:/plugin/ICMotionCapture/icon/Selected.png</selectedon>:/plugin/ICMotionCapture/icon/UnSelected.png</iconset>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QTransToolBtn" name="qtNoseTransToolBtn">
+         <property name="geometry">
+          <rect>
+           <x>116</x>
+           <y>155</y>
+           <width>16</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="toolTip">
+          <string>Nose</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>:/plugin/ICMotionCapture/icon/UnSelected.png</normaloff>
+           <normalon>:/plugin/ICMotionCapture/icon/Selected.png</normalon>
+           <activeoff>:/plugin/ICMotionCapture/icon/UnSelected.png</activeoff>
+           <activeon>:/plugin/ICMotionCapture/icon/Selected.png</activeon>
+           <selectedoff>:/plugin/ICMotionCapture/icon/Selected.png</selectedoff>
+           <selectedon>:/plugin/ICMotionCapture/icon/Selected.png</selectedon>:/plugin/ICMotionCapture/icon/UnSelected.png</iconset>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QTransToolBtn" name="qtMouthTransToolBtn">
+         <property name="geometry">
+          <rect>
+           <x>116</x>
+           <y>192</y>
+           <width>16</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="toolTip">
+          <string>Mouth</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>:/plugin/ICMotionCapture/icon/UnSelected.png</normaloff>
+           <normalon>:/plugin/ICMotionCapture/icon/Selected.png</normalon>
+           <activeoff>:/plugin/ICMotionCapture/icon/UnSelected.png</activeoff>
+           <activeon>:/plugin/ICMotionCapture/icon/Selected.png</activeon>
+           <selectedoff>:/plugin/ICMotionCapture/icon/Selected.png</selectedoff>
+           <selectedon>:/plugin/ICMotionCapture/icon/Selected.png</selectedon>:/plugin/ICMotionCapture/icon/UnSelected.png</iconset>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QTransToolBtn" name="qtLeftMouthCloseTransToolBtn">
+         <property name="geometry">
+          <rect>
+           <x>160</x>
+           <y>170</y>
+           <width>16</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="toolTip">
+          <string>LeftMouthClose</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>:/plugin/ICMotionCapture/icon/UnSelected.png</normaloff>
+           <normalon>:/plugin/ICMotionCapture/icon/Selected.png</normalon>
+           <activeoff>:/plugin/ICMotionCapture/icon/UnSelected.png</activeoff>
+           <activeon>:/plugin/ICMotionCapture/icon/Selected.png</activeon>
+           <selectedoff>:/plugin/ICMotionCapture/icon/Selected.png</selectedoff>
+           <selectedon>:/plugin/ICMotionCapture/icon/Selected.png</selectedon>:/plugin/ICMotionCapture/icon/UnSelected.png</iconset>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QTransToolBtn" name="qtLeftEyeBallTransToolBtn">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="geometry">
+          <rect>
+           <x>150</x>
+           <y>120</y>
+           <width>16</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="toolTip">
+          <string>LeftEyeBall</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>:/plugin/ICMotionCapture/icon/UnSelected.png</normaloff>
+           <normalon>:/plugin/ICMotionCapture/icon/Selected.png</normalon>
+           <activeoff>:/plugin/ICMotionCapture/icon/UnSelected.png</activeoff>
+           <activeon>:/plugin/ICMotionCapture/icon/Selected.png</activeon>
+           <selectedoff>:/plugin/ICMotionCapture/icon/Selected.png</selectedoff>
+           <selectedon>:/plugin/ICMotionCapture/icon/Selected.png</selectedon>:/plugin/ICMotionCapture/icon/UnSelected.png</iconset>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QTransToolBtn" name="qtLeftBrowTransToolBtn">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="geometry">
+          <rect>
+           <x>150</x>
+           <y>100</y>
+           <width>16</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="toolTip">
+          <string>LeftBrow</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>:/plugin/ICMotionCapture/icon/UnSelected.png</normaloff>
+           <normalon>:/plugin/ICMotionCapture/icon/Selected.png</normalon>
+           <activeoff>:/plugin/ICMotionCapture/icon/UnSelected.png</activeoff>
+           <activeon>:/plugin/ICMotionCapture/icon/Selected.png</activeon>
+           <selectedoff>:/plugin/ICMotionCapture/icon/Selected.png</selectedoff>
+           <selectedon>:/plugin/ICMotionCapture/icon/Selected.png</selectedon>:/plugin/ICMotionCapture/icon/UnSelected.png</iconset>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </widget>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QCheckBox" name="qtSymmetrySelectCheckBox">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Symmetry Select</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Line" name="line">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <widget class="QCheckBox" name="qtHeadRotationCheckBox">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>Head Rotation</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="qtMirrorMotionCheckBox">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>Mirror Motion</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <widget class="QLabel" name="label_4">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Smoother</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboSpinBox" name="qtSmootherCombodoublespinbox" native="true">
+          <property name="value" stdset="0">
+           <number>50</number>
+          </property>
+          <property name="maximum" stdset="0">
+           <number>100</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_6">
+        <item>
+         <widget class="QLabel" name="label_5">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Intensity Multiplier</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_2">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboDoubleSpinBox" name="qtIntensityMultiplierCombodoublespinbox" native="true">
+          <property name="decimals" stdset="0">
+           <number>2</number>
+          </property>
+          <property name="spacing" stdset="0">
+           <number>10</number>
+          </property>
+          <property name="value" stdset="0">
+           <double>1.000000000000000</double>
+          </property>
+          <property name="minimum" stdset="0">
+           <double>0.100000000000000</double>
+          </property>
+          <property name="maximum" stdset="0">
+           <double>2.000000000000000</double>
+          </property>
+          <property name="singleStep" stdset="0">
+           <double>0.010000000000000</double>
+          </property>
+          <property name="independentSpin" stdset="0">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QStackedWidget" name="qtEditorPanelStackedWidget">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <widget class="QWidget" name="qtEditorPanelWidget">
+         <layout class="QHBoxLayout" name="horizontalLayout_13">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QToolButton" name="qtPreviewPushButton">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>92</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="text">
+             <string>Start Preview</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>:/plugin/ICMotionCapture/icon/Preview.svg</normaloff>:/plugin/ICMotionCapture/icon/Preview.svg</iconset>
+            </property>
+            <property name="toolButtonStyle">
+             <enum>Qt::ToolButtonTextUnderIcon</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="qtRecordPushButton">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>92</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="text">
+             <string>Stop Record</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>:/plugin/ICMotionCapture/icon/Record.svg</normaloff>:/plugin/ICMotionCapture/icon/Record.svg</iconset>
+            </property>
+            <property name="toolButtonStyle">
+             <enum>Qt::ToolButtonTextUnderIcon</enum>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="qtPreviewPanelWidget">
+         <layout class="QHBoxLayout" name="horizontalLayout_14">
+          <property name="leftMargin">
+           <number>9</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>9</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_15" stretch="0">
+            <item>
+             <widget class="QLabel" name="pkPreviewLabel">
+              <property name="layoutDirection">
+               <enum>Qt::LeftToRight</enum>
+              </property>
+              <property name="text">
+               <string>Press space key to preview</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="qtRecordPanelWidget">
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_16">
+          <property name="leftMargin">
+           <number>9</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>9</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_11" stretch="0,0">
+            <item>
+             <widget class="QLabel" name="qtRecordLabel">
+              <property name="text">
+               <string>Press space key to record</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="wordWrap">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_8">
+              <property name="text">
+               <string>Press Enter for record at 50% speed</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="qtPreviewingPanelWidget">
+         <layout class="QHBoxLayout" name="horizontalLayout_17" stretch="0">
+          <property name="leftMargin">
+           <number>9</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>9</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_12">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="qtPreviewingLabel4">
+              <property name="text">
+               <string>Previewing......</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_18" stretch="1">
+              <property name="spacing">
+               <number>6</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="qtPreviewingLabel2">
+                <property name="text">
+                 <string>Press space key to stop</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="qtRecordingPanelWidget">
+         <layout class="QVBoxLayout" name="verticalLayout_13">
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_14">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="qtRecordingLabel4">
+              <property name="text">
+               <string>Recording......</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_19" stretch="1">
+              <item>
+               <widget class="QLabel" name="qtRecordingLabel2">
+                <property name="text">
+                 <string>Press space key to stop</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+  <action name="qtPreviewPuppetAction">
+   <property name="text">
+    <string notr="true">PreviewPuppet</string>
+   </property>
+   <property name="iconText">
+    <string notr="true">PreviewPuppet</string>
+   </property>
+   <property name="toolTip">
+    <string notr="true">PreviewPuppet</string>
+   </property>
+   <property name="shortcut">
+    <string>Space</string>
+   </property>
+  </action>
+  <action name="qtRecordPuppetAction">
+   <property name="text">
+    <string notr="true">RecordPuppet</string>
+   </property>
+   <property name="iconText">
+    <string notr="true">RecordPuppet</string>
+   </property>
+   <property name="toolTip">
+    <string notr="true">RecordPuppet</string>
+   </property>
+   <property name="shortcut">
+    <string>Space</string>
+   </property>
+  </action>
+  <action name="qtDoEscapeAction">
+   <property name="text">
+    <string notr="true">DoEscape</string>
+   </property>
+   <property name="iconText">
+    <string notr="true">DoEscape</string>
+   </property>
+   <property name="toolTip">
+    <string notr="true">DoEscape</string>
+   </property>
+   <property name="shortcut">
+    <string>Esc</string>
+   </property>
+  </action>
+  <action name="qtSlowRecordPuppetAction">
+   <property name="text">
+    <string notr="true">SlowRecordPuppetAction</string>
+   </property>
+   <property name="iconText">
+    <string notr="true">SlowRecordPuppetAction</string>
+   </property>
+   <property name="toolTip">
+    <string notr="true">qtSlowRecordPuppetAction</string>
+   </property>
+   <property name="shortcut">
+    <string>Return</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QTransToolBtn</class>
+   <extends>QToolButton</extends>
+   <header>QTransToolBtn.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QRLContainer</class>
+   <extends>QWidget</extends>
+   <header>QRLContainer.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>QComboSpinBox</class>
+   <extends>QWidget</extends>
+   <header>QComboSpinBox.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>QComboDoubleSpinBox</class>
+   <extends>QWidget</extends>
+   <header>QComboDoubleSpinBox.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="FacialMocap.qrc"/>
+ </resources>
+ <connections/>
+</ui>
